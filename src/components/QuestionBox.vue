@@ -22,6 +22,10 @@
           ]"
         >
           {{ answer }}
+           <b-icon v-if="[!isAnswered && selectedIndex === index]" icon="" scale="2" variant=""></b-icon>
+           <b-icon v-else-if="[isAnswered && correctIndex === index]" icon="check2" scale="2" variant="success"></b-icon>
+           <b-icon v-else-if="[isAnswered && selectedIndex === index && correctIndex !== index]" icon="x" scale="2" variant="danger"></b-icon>
+           <b-icon v-else icon="" scale="2" variant=""></b-icon>
         </b-list-group-item>
       </b-list-group>
 

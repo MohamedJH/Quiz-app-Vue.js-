@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <b-container class="bv-example-row border border-dark">
+    <b-container class="bv-example-row ">
       <b-row class=" justify-content-md-start ustify-content-md-start">
-        <b-col class="col-md-6 col-sm-10 border border-dark m-1">
+        <b-col class="col-md-6 col-sm-10 m-1">
           <Header :result="result" :totalQuestion="totalQuestion" />
         </b-col>
       </b-row>
 
       <b-row class="justify-content-md-center">
-        <b-col class="col-md-6 col-sm-10 border border-dark mt-3">
+        <b-col class="col-md-6 col-sm-10 mt-3">
           <QuestionBox
             v-if="questions.length"
             :currentQuestion="questions[index]"
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     next() {
-      this.questions.length - 1 > this.index
+      this.questions.length  > this.index
         ? this.index++
         : alert("End Of The Game");
     },
